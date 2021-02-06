@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './App.css'
 
 //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 //appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
@@ -32,29 +33,27 @@ function App() {
   if (location === false) {
     return (
       <>
-        Você precisa habilitar a localização no browser o/
+        <h3 className= "App">Você precisa habilitar a localização no browser o/</h3>
       </>
     )
   } else if (weather === false) {
     return (
-      <>
-        Carregando o clima...
+      < >
+        <h3 className= "App" >Carregando o clima...</h3>
       </>
     )
   }
   else {
     return (
       <>
-        <h3>Clima nas suas Coordenadas ({weather['weather'][0]['description']})</h3>
-        <hr />
-        <ul>
-          <li>Temperatura atual: {weather['main']['temp']}°</li>
-          <li>Temperatura máxima: {weather['main']['temp_max']}°</li>
-          <li>Temperatura minima: {weather['main']['temp_min']}°</li>
-          <li>Pressão: {weather['main']['pressure']} hpa</li>
-          <li>Umidade: {weather['main']['humidity']}%</li>
+        <h3 className= "App App-header">Clima nas suas Coordenadas ({weather['weather'][0]['description']})</h3>
+        <ul className= "App App-tabel">
+          <li className= "App-row">Temperatura atual: {weather['main']['temp']}°</li>
+          <li className= "App-row">Temperatura máxima: {weather['main']['temp_max']}°</li>
+          <li className= "App-row">Temperatura minima: {weather['main']['temp_min']}°</li>
+          <li className= "App-row">Pressão: {weather['main']['pressure']} hpa</li>
+          <li className= "App-row">Umidade: {weather['main']['humidity']}%</li>
         </ul>
-        <hr />
       </>
     );
   }
