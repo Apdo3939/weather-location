@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './App.css'
-
-//api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-//appid: process.env.REACT_APP_OPEN_WHEATHER_KEY,
 
 function App() {
 
@@ -33,28 +29,36 @@ function App() {
   if (location === false) {
     return (
       <>
-        <h3 className= "App">Você precisa habilitar a localização no browser o/</h3>
+        <h3 className="app-text">Você precisa habilitar a localização no browser o/</h3>
       </>
     )
   } else if (weather === false) {
     return (
       < >
-        <h3 className= "App" >Carregando o clima...</h3>
+        <h3 className="app-text" >Carregando o clima...</h3>
       </>
     )
   }
   else {
     return (
-      <>
-        <h3 className= "App App-header">Clima nas suas Coordenadas ({weather['weather'][0]['description']})</h3>
-        <ul className= "App App-tabel">
-          <li className= "App-row">Temperatura atual: {weather['main']['temp']}°</li>
-          <li className= "App-row">Temperatura máxima: {weather['main']['temp_max']}°</li>
-          <li className= "App-row">Temperatura minima: {weather['main']['temp_min']}°</li>
-          <li className= "App-row">Pressão: {weather['main']['pressure']} hpa</li>
-          <li className= "App-row">Umidade: {weather['main']['humidity']}%</li>
-        </ul>
-      </>
+
+      <div className="app-container">
+        <div className="app-header">
+          <h3 className="app-header-text">Clima nas suas Coordenadas ({weather['weather'][0]['description']})</h3>
+        </div >
+        <div className="app-tabel-container">
+          <ul className="app-tabel">
+            <li className="app-tabel-row">Temperatura atual: {weather['main']['temp']}°</li>
+            <li className="app-tabel-row">Temperatura máxima: {weather['main']['temp_max']}°</li>
+            <li className="app-tabel-row">Temperatura minima: {weather['main']['temp_min']}°</li>
+            <li className="app-tabel-row">Pressão: {weather['main']['pressure']} hpa</li>
+            <li className="app-tabel-row">Umidade: {weather['main']['humidity']}%</li>
+          </ul>
+        </div>
+        <div className="app-footer">
+          <h3 className="app-footer-text">Desenvolvido para fins acadêmicos por Alexandre pereira</h3>
+        </div >
+      </div>
     );
   }
 }

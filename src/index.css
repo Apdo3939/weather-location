@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  margin     : 0;
+  padding    : 0;
+  font-family: 'Times New Roman', Times, serif;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  text-decoration: none;
+  list-style     : none;
+}
+
+.app-container {
+  width          : 100vw;
+  height         : 100vh;
+  background     : #8eafce;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: space-between;
+  background: radial-gradient(farthest-side at left bottom, orange, skyblue);  
+}
+
+.app-text {
+  font-size: 30px;
+}
+
+.app-header {
+  width          : 100vw;
+  height         : 120px;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  background     : #032d55;
+}
+
+.app-header-text {
+  font-size  : 30px;
+  font-weight: 500;
+  color      : aliceblue;
+}
+
+.app-tabel-container {
+  padding: 20px;
+  margin : 20px;
+}
+
+.app-tabel {
+  padding      : 20px;
+  margin       : 20px;
+  border       : 1px solid aliceblue;
+  border-radius: 20px;
+
+}
+
+.app-tabel-row {
+  margin   : 10px;
+  color    : #032d55;
+  font-size: 26px;
+}
+
+.app-footer {
+  width          : 100vw;
+  height         : 120px;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  background     : #032d55;
+}
+
+.app-footer-text {
+  font-size  : 18px;
+  font-weight: 400;
+  color      : orange;
 }
