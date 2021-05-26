@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import gitImg from './git.jpg';
 
 function App() {
 
@@ -57,6 +58,9 @@ function App() {
         </div>
         <div className="app-footer">
           <h3 className="app-footer-text">Desenvolvido para fins acadêmicos por Alexandre pereira</h3>
+          <a href="https://github.com/Apdo3939/weather-location" target="new">
+            <h5 className="app-footer-text-git">GitHub</h5>
+          </a>
         </div >
       </div>
     );
